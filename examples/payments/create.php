@@ -4,11 +4,15 @@
  * Utiliza el método payment/create
  */
 require(__DIR__ . "/../../lib/FlowApi.class.php");
+require(__DIR__ . "/../../index.php");
 
 // RECIBE VALORES DEL CLIENTE
-$subjec = $_REQUEST['subject'];
-$email = $_REQUEST['email'];
-$valorRecibido = $_REQUEST['valorRecibido'];
+$subjectC = $subject;
+$emailC = $email;
+$valorC = $valor;
+// $subjectC = "Enviado desde el otro formulario";
+// $emailC = "correoXDD@gmail.com";
+// $valorC = 3000;
 
 //Para datos opcionales campo "optional" prepara un arreglo JSON
 $optional = array(
@@ -20,10 +24,10 @@ $optional = json_encode($optional);
 //Prepara el arreglo de datos
 $params = array(
 	"commerceOrder" => rand(1100,2000),
-	"subject" => $subject,
+	"subject" => $subjectC,
 	"currency" => "CLP",
-	"amount" => 5000,
-	"email" => $email,
+	"amount" => $valorC,
+	"email" => $emailC,
 	"paymentMethod" => 9,
 	"urlConfirmation" => Config::get("BASEURL") . "/examples/payments/confirm.php",
 	"urlReturn" => Config::get("BASEURL") ."/examples/payments/result.php",
