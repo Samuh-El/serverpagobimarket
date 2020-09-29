@@ -1,10 +1,19 @@
 <?php
 
-$subjec = $_REQUEST['subject'];
-$email = $_REQUEST['email'];
-$valorRecibido = $_REQUEST['valorRecibido'];
+try
+{
+	$subjec = $_REQUEST['subject'];
+	$email = $_REQUEST['email'];
+	$valorRecibido = $_REQUEST['valorRecibido'];
 
-echo '<script language="javascript">alert("'.echo($valorRecibido).'");</script>';
+	print_r($valorRecibido);
+}
+
+catch(exception $e)
+{
+	echo("Error al recibir parámetros");
+}
+
 //header("Location: examples/payments/create.php"); 
 
 ?>
