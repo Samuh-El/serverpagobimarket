@@ -5,9 +5,14 @@
  */
 require(__DIR__ . "/../../lib/FlowApi.class.php");
 
+// RECIBE VALORES DEL CLIENTE
+$subjec = $_REQUEST['subject'];
+$email = $_REQUEST['email'];
+$valorRecibido = $_REQUEST['valorRecibido'];
+
 //Para datos opcionales campo "optional" prepara un arreglo JSON
 $optional = array(
-	//"rut" => "9999999-9",
+	//x"rut" => "9999999-9",
 	//"otroDato" => "otroDato"
 );
 $optional = json_encode($optional);
@@ -15,10 +20,10 @@ $optional = json_encode($optional);
 //Prepara el arreglo de datos
 $params = array(
 	"commerceOrder" => rand(1100,2000),
-	"subject" => "Pago de prueba",
+	"subject" => $subject,
 	"currency" => "CLP",
 	"amount" => 5000,
-	"email" => "cliente@gmail.com",
+	"email" => $email,
 	"paymentMethod" => 9,
 	"urlConfirmation" => Config::get("BASEURL") . "/examples/payments/confirm.php",
 	"urlReturn" => Config::get("BASEURL") ."/examples/payments/result.php",
