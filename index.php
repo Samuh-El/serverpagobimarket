@@ -6,7 +6,8 @@ try
 	$email = $_REQUEST['email'];
 	$valorRecibido = $_REQUEST['valorRecibido'];
 
-	print_r($valorRecibido);
+	echo '<script type="text/javascript">alert('.echo()$valorRecibido.');</script>'; 
+
 }
 
 catch(exception $e)
