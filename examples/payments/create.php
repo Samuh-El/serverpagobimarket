@@ -30,6 +30,10 @@ try
 
 
 	//Prepara el arreglo de datos
+	/*URLs originales!
+	"urlConfirmation" => Config::get("BASEURL") . "/examples/payments/confirm.php",
+		"urlReturn" => Config::get("BASEURL") ."/examples/payments/result.php",
+	*/
 	$params = array(
 		"commerceOrder" => rand(1100,2000),
 		"subject" => $_REQUEST['subject'],
@@ -37,8 +41,8 @@ try
 		"amount" => $_REQUEST['valor'],
 		"email" => $_REQUEST['email'],
 		"paymentMethod" => 9,
-		"urlConfirmation" => Config::get("BASEURL") . "/examples/payments/confirm.php",
-		"urlReturn" => Config::get("BASEURL") ."/examples/payments/result.php",
+		"urlConfirmation" => "http://bimarketchile.cl/#/post-compra",
+		"urlReturn" => "http://bimarketchile.cl/#/post-compra",
 		"optional" => $optional
 	);
 
@@ -48,7 +52,9 @@ try
 
 catch(Exception $e)
 {
-	print_r("Error al preparar parámetros");
+	//http://bimarketchile.cl/#/errorPagoBiMarket
+	//print_r("Error al preparar parámetros");
+	header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
 }
 
 try {
@@ -63,6 +69,7 @@ try {
 
 catch (Exception $e) {
 	echo $e->getCode() . " - " . $e->getMessage();
+	header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
 }
 
 ?>

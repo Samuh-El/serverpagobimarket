@@ -30,6 +30,7 @@ try
 catch(exception $e)
 {
 	echo("Error al recibir parámetros");
+	header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
 }
 
 
