@@ -8,9 +8,9 @@ require(__DIR__ . "/../../index.php");
 
 
 // RECIBE VALORES DEL CLIENTE
-// $subjectC = $subject;
-// $emailC = $email;
-// $valorC = $valor;
+$subjectC = $subject;
+$emailC = $email;
+$valorC = $valor;
 
 
 // $subjectC = "Enviado desde el otro formulario";
@@ -32,10 +32,10 @@ $optional = json_encode($optional);
 //Prepara el arreglo de datos
 $params = array(
 	"commerceOrder" => rand(1100,2000),
-	"subject" => $subject,
+	"subject" => $subjectC,
 	"currency" => "CLP",
-	"amount" => $valor,
-	"email" => $email,
+	"amount" => $valorC,
+	"email" => $emailC,
 	"paymentMethod" => 9,
 	"urlConfirmation" => Config::get("BASEURL") . "/examples/payments/confirm.php",
 	"urlReturn" => Config::get("BASEURL") ."/examples/payments/result.php",
