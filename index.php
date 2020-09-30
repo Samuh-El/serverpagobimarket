@@ -35,14 +35,14 @@ try
 	fclose($fp); 
 
 	// leer txt
-	$fichero_texto = fopen ("subject.txt", "r");
-	$subjectC = fread($fichero_texto, filesize("subject.txt"));
+	// $fichero_texto = fopen ("subject.txt", "r");
+	// $subjectC = fread($fichero_texto, filesize("subject.txt"));
 
-	$fichero_textoDos = fopen ("email.txt", "r");
-	$emailC = fread($fichero_textoDos, filesize("email.txt"));
+	// $fichero_textoDos = fopen ("email.txt", "r");
+	// $emailC = fread($fichero_textoDos, filesize("email.txt"));
 
-	$fichero_textoTres = fopen ("valor.txt", "r");
-	$valorC = fread($fichero_textoTres, filesize("valor.txt"));
+	// $fichero_textoTres = fopen ("valor.txt", "r");
+	// $valorC = fread($fichero_textoTres, filesize("valor.txt"));
 
 	// print_r($subjectC."<br>");print_r($valorC."<br>");print_r($emailC."<br>");
 	//print_r($valor."<br>"); print_r($email."<br>");print_r($subject."<br>");

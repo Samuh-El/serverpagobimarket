@@ -32,11 +32,11 @@ try
 	$fichero_texto = fopen ("subject.txt", "r");
 	$subjectC = fread($fichero_texto, filesize("subject.txt"));
 
-	$fichero_texto2 = fopen ("email.txt", "r");
-	$emailC = fread($fichero_texto2, filesize("email.txt"));
+	$fichero_textoDos = fopen ("email.txt", "r");
+	$emailC = fread($fichero_textoDos, filesize("email.txt"));
 
-	$fichero_texto3 = fopen ("valor.txt", "r");
-	$valorC = fread($fichero_texto3, filesize("valor.txt"));
+	$fichero_textoTres = fopen ("valor.txt", "r");
+	$valorC = fread($fichero_textoTres, filesize("valor.txt"));
 
 	//Prepara el arreglo de datos
 	$params = array(
