@@ -4,6 +4,7 @@
  * Utiliza el método payment/create
  */
 require(__DIR__ . "/../../lib/FlowApi.class.php");
+require(__DIR__ . "/../../index.php");
 
 
 // RECIBE VALORES DEL CLIENTE
@@ -11,11 +12,9 @@ require(__DIR__ . "/../../lib/FlowApi.class.php");
 // $subjectC = "Enviado desde el otro formulario";
 // $emailC = "correoXDD@gmail.com";
 // $valorC = 3000;
-// $subjectC = $_REQUEST['subject'];
-// $emailC = $_REQUEST['email'];
-// $valorC = $_REQUEST['valor'];
-
-
+$subjectC = $_REQUEST['subject'];
+$emailC = $_REQUEST['email'];
+$valorC = $_REQUEST['valor'];
 
 
 try
@@ -28,15 +27,7 @@ try
 	);
 	$optional = json_encode($optional);
 
-	// leet txt
-	$fichero_texto = fopen ("subject.txt", "r");
-	$subjectC = fread($fichero_texto, filesize("subject.txt"));
 
-	$fichero_textoDos = fopen ("email.txt", "r");
-	$emailC = fread($fichero_textoDos, filesize("email.txt"));
-
-	$fichero_textoTres = fopen ("valor.txt", "r");
-	$valorC = fread($fichero_textoTres, filesize("valor.txt"));
 
 	//Prepara el arreglo de datos
 	$params = array(
