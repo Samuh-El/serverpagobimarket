@@ -5,9 +5,9 @@ try
 	// $subject = "Enviado desde el otro formulario";
 	// $email = "correoXDD@gmail.com";
 	// $valor = 0.3;
-	$subject = $_REQUEST['subject'];
-	$email = $_REQUEST['email'];
-	$valor = $_REQUEST['valor'];
+	$subject = $_POST['subject'];
+	$email = $_POST['email'];
+	$valor = $_POST['valor'];
 
 	$prueba = $valor + 1;
 
