@@ -9,7 +9,7 @@
     <!-- recibe los datos -->
     <h2>Formulario de registro</h2>
 
-    <form method="post" action="http://pruebas.genbuproducciones.com/pago">
+    <form method="post" action="https://serverpagobimarket.herokuapp.com">
         Titulo de la vola xdxd: <input type="text" name="subject"><br>
         Monto: <input type="text" name="valor"><br>
         Descripción: <input type="text" name="email"><br>
