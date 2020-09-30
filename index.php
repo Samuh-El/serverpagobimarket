@@ -9,10 +9,6 @@ try
 	$email = $_REQUEST['email'];
 	$valor = $_REQUEST['valor'];
 
-	print_r($subject); echo("<br>");
-	print_r($email); echo("<br>");
-	print_r($valor); ; echo("<br>");
-
 	$prueba = $valor + 1;
 
 	// Extraer valor UF desde api
@@ -26,7 +22,7 @@ try
 	//print_r($valor);
 
 	// Enviar a hacer el pago
-	//header("Location: examples/payments/create.php");
+	header("Location: examples/payments/create.php");
 
 }
 

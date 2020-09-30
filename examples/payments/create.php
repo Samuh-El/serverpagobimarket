@@ -6,10 +6,17 @@
 require(__DIR__ . "/../../lib/FlowApi.class.php");
 require(__DIR__ . "/../../index.php");
 
+echo($subject); echo($email); echo($valor);
+print_r($subject);echo("<br>");
+print_r($email);echo("<br>");
+print_r($valor);echo("<br>");
+
 // RECIBE VALORES DEL CLIENTE
 $subjectC = $subject;
 $emailC = $email;
 $valorC = $valor;
+
+
 // $subjectC = "Enviado desde el otro formulario";
 // $emailC = "correoXDD@gmail.com";
 // $valorC = 3000;
