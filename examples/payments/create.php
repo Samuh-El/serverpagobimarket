@@ -17,6 +17,10 @@ $valorC = $valor;
 // $emailC = "correoXDD@gmail.com";
 // $valorC = 3000;
 
+
+try
+{
+
 //Para datos opcionales campo "optional" prepara un arreglo JSON
 $optional = array(
 	//x"rut" => "9999999-9",
@@ -24,8 +28,7 @@ $optional = array(
 );
 $optional = json_encode($optional);
 
-try
-{
+
 //Prepara el arreglo de datos
 $params = array(
 	"commerceOrder" => rand(1100,2000),
@@ -41,6 +44,7 @@ $params = array(
 //Define el metodo a usar
 $serviceName = "payment/create";
 }
+
 catch(Exception $e)
 {
 	print_r("Error al preparar parámetros");
@@ -54,7 +58,9 @@ try {
 	//Prepara url para redireccionar el browser del pagador
 	$redirect = $response["url"] . "?token=" . $response["token"];
 	header("location:$redirect");
-} catch (Exception $e) {
+} 
+
+catch (Exception $e) {
 	echo $e->getCode() . " - " . $e->getMessage();
 }
 
