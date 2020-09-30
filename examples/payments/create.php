@@ -12,9 +12,9 @@ require(__DIR__ . "/../../index.php");
 // $subjectC = "Enviado desde el otro formulario";
 // $emailC = "correoXDD@gmail.com";
 // $valorC = 3000;
-$subjectC = $_REQUEST['subject'];
-$emailC = $_REQUEST['email'];
-$valorC = $_REQUEST['valor'];
+// $subjectC = $_REQUEST['subject'];
+// $emailC = $_REQUEST['email'];
+// $valorC = $_REQUEST['valor'];
 
 
 try
@@ -32,10 +32,10 @@ try
 	//Prepara el arreglo de datos
 	$params = array(
 		"commerceOrder" => rand(1100,2000),
-		"subject" => $subjectC,
+		"subject" => $_REQUEST['subject'],
 		"currency" => "CLP",
-		"amount" => $valorC,
-		"email" => $emailC,
+		"amount" => $_REQUEST['valor'],
+		"email" => $_REQUEST['email'],
 		"paymentMethod" => 9,
 		"urlConfirmation" => Config::get("BASEURL") . "/examples/payments/confirm.php",
 		"urlReturn" => Config::get("BASEURL") ."/examples/payments/result.php",

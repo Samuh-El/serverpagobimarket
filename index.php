@@ -23,7 +23,7 @@ try
 
 
 	// Enviar a hacer el pago
-	header("Location: /examples/payments/create.php");
+	header("Location: /examples/payments/create.php?subject=".$subject."&email=".$email."&valor=".$valor);
 
 }
 
