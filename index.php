@@ -9,6 +9,7 @@ try
 	$subject = $_REQUEST['subject'];
 	$email = $_REQUEST['email'];
 	$valor = $_REQUEST['valor'];
+	$idPlan = $_REQUEST['idPlan'];
 
 	$prueba = $valor + 1;
 
@@ -23,7 +24,7 @@ try
 
 
 	// Enviar a hacer el pago
-	header("Location: /examples/payments/create.php?subject=".$subject."&email=".$email."&valor=".$valor);
+	header("Location: /examples/payments/create.php?subject=".$subject."&email=".$email."&valor=".$valor."&idPlan=".$idPlan);
 
 }
 
