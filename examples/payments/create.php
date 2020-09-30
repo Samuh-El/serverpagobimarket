@@ -11,8 +11,6 @@ require(__DIR__ . "/../../index.php");
 $subjectC = $subject;
 $emailC = $email;
 $valorC = $valor;
-
-
 // $subjectC = "Enviado desde el otro formulario";
 // $emailC = "correoXDD@gmail.com";
 // $valorC = 3000;
