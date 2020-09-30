@@ -5,9 +5,9 @@ try
 	// $subject = "Enviado desde el otro formulario";
 	// $email = "correoXDD@gmail.com";
 	// $valor = 0.3;
-	$subject = $_POST['subject'];
-	$email = $_POST['email'];
-	$valor = $_POST['valor'];
+	$subject = $_REQUEST['subject'];
+	$email = $_REQUEST['email'];
+	$valor = $_REQUEST['valor'];
 
 	$prueba = $valor + 1;
 
@@ -22,7 +22,7 @@ try
 	//print_r($valor);
 
 	// Enviar a hacer el pago
-	header("Location: /examples/payments/create.php");
+	header("Location: examples/payments/create.php");
 
 }
 
