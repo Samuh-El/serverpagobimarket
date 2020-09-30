@@ -48,7 +48,7 @@ try {
 		// INSERT INTO `Correo` (`id`, `correo`, 
 		//`idPlan`, `fechaInsertado`, `estado`) VALUES (NULL, '', '', CURRENT_TIMESTAMP, '');
 		$sql="INSERT INTO `Correo` (`id`, `correo`, `idPlan`, `fechaInsertado`, `estado`) VALUES
-		(NULL, '".$email."', '".$idPlan."' , CURRENT_TIMESTAMP, '1');";
+		(NULL, '".$email."', '".$idPlan."' , CURRENT_TIMESTAMP, '0');";
 
 		if ($conn->query($sql) === TRUE) {
 
