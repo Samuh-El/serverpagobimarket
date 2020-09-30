@@ -6,10 +6,6 @@
 require(__DIR__ . "/../../lib/FlowApi.class.php");
 require(__DIR__ . "/../../index.php");
 
-echo($subject); echo($email); echo($valor);
-print_r($subject);echo("<br>");
-print_r($email);echo("<br>");
-print_r($valor);echo("<br>");
 
 // RECIBE VALORES DEL CLIENTE
 $subjectC = $subject;
@@ -28,6 +24,8 @@ $optional = array(
 );
 $optional = json_encode($optional);
 
+try
+{
 //Prepara el arreglo de datos
 $params = array(
 	"commerceOrder" => rand(1100,2000),
@@ -42,6 +40,11 @@ $params = array(
 );
 //Define el metodo a usar
 $serviceName = "payment/create";
+}
+catch(Exception $e)
+{
+	print_r("Error al preparar parámetros");
+}
 
 try {
 	// Instancia la clase FlowApi
