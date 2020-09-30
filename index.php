@@ -22,7 +22,7 @@ try
 	//print_r($valor);
 
 	// Enviar a hacer el pago
-	header("Location: https://serverpagobimarket.herokuapp.com/examples/payments/create.php");
+	header("Location: /examples/payments/create.php");
 
 }
 
