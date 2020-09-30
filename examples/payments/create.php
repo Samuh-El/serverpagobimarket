@@ -4,7 +4,6 @@
  * Utiliza el método payment/create
  */
 require(__DIR__ . "/../../lib/FlowApi.class.php");
-require(__DIR__ . "/../../index.php");
 
 
 // RECIBE VALORES DEL CLIENTE
@@ -12,36 +11,48 @@ require(__DIR__ . "/../../index.php");
 // $subjectC = "Enviado desde el otro formulario";
 // $emailC = "correoXDD@gmail.com";
 // $valorC = 3000;
-$subjectC = $subject;
-$emailC = $email;
-$valorC = $valor;
+// $subjectC = $_REQUEST['subject'];
+// $emailC = $_REQUEST['email'];
+// $valorC = $_REQUEST['valor'];
+
+
 
 
 try
 {
 
-//Para datos opcionales campo "optional" prepara un arreglo JSON
-$optional = array(
-	//x"rut" => "9999999-9",
-	//"otroDato" => "otroDato"
-);
-$optional = json_encode($optional);
+	//Para datos opcionales campo "optional" prepara un arreglo JSON
+	$optional = array(
+		//x"rut" => "9999999-9",
+		//"otroDato" => "otroDato"
+	);
+	$optional = json_encode($optional);
 
+	// leet txt
+	$fichero_texto = fopen ("subject.txt", "r");
+	$subjectC = fread($fichero_texto, filesize("subject.txt"));
 
-//Prepara el arreglo de datos
-$params = array(
-	"commerceOrder" => rand(1100,2000),
-	"subject" => $subjectC,
-	"currency" => "CLP",
-	"amount" => $valorC,
-	"email" => $emailC,
-	"paymentMethod" => 9,
-	"urlConfirmation" => Config::get("BASEURL") . "/examples/payments/confirm.php",
-	"urlReturn" => Config::get("BASEURL") ."/examples/payments/result.php",
-	"optional" => $optional
-);
-//Define el metodo a usar
-$serviceName = "payment/create";
+	$fichero_texto2 = fopen ("email.txt", "r");
+	$emailC = fread($fichero_texto2, filesize("email.txt"));
+
+	$fichero_texto3 = fopen ("valor.txt", "r");
+	$valorC = fread($fichero_texto3, filesize("valor.txt"));
+
+	//Prepara el arreglo de datos
+	$params = array(
+		"commerceOrder" => rand(1100,2000),
+		"subject" => $subjectC,
+		"currency" => "CLP",
+		"amount" => $valorC,
+		"email" => $emailC,
+		"paymentMethod" => 9,
+		"urlConfirmation" => Config::get("BASEURL") . "/examples/payments/confirm.php",
+		"urlReturn" => Config::get("BASEURL") ."/examples/payments/result.php",
+		"optional" => $optional
+	);
+
+	//Define el metodo a usar
+	$serviceName = "payment/create";
 }
 
 catch(Exception $e)
