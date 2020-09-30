@@ -30,7 +30,8 @@ try {
 	
 	
 } catch (Exception $e) {
-	echo $e->getCode() . " - " . $e->getMessage();
+	//echo $e->getCode() . " - " . $e->getMessage();
+	header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
 }
 
 ?>

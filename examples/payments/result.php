@@ -24,7 +24,8 @@ try {
 	print_r($response);
 	
 } catch (Exception $e) {
-	echo "Error: " . $e->getCode() . " - " . $e->getMessage();
+	//echo "Error: " . $e->getCode() . " - " . $e->getMessage();
+	header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
 }
 
 ?>

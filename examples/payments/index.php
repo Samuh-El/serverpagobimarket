@@ -43,7 +43,8 @@ $serviceName = "payment/create";
 
 catch(Exception $e)
 {
-	print_r("Error al preparar parámetros");
+	//print_r("Error al preparar parámetros");
+	header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
 }
 
 try {
@@ -57,7 +58,8 @@ try {
 } 
 
 catch (Exception $e) {
-	echo $e->getCode() . " - " . $e->getMessage();
+	//echo $e->getCode() . " - " . $e->getMessage();
+	header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
 }
 
 ?>
