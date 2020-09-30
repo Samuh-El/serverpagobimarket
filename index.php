@@ -2,12 +2,12 @@
 
 try
 {
-	$subject = "Enviado desde el otro formulario";
-	$email = "correoXDD@gmail.com";
-	$valor = 0.3;
-	// $subject = $_REQUEST['subject'];
-	// $email = $_REQUEST['email'];
-	// $valor = $_REQUEST['valor'];
+	// $subject = "Enviado desde el otro formulario";
+	// $email = "correoXDD@gmail.com";
+	// $valor = 0.3;
+	$subject = $_REQUEST['subject'];
+	$email = $_REQUEST['email'];
+	$valor = $_REQUEST['valor'];
 
 	print_r($subject); echo("<br>");
 	print_r($email); echo("<br>");
