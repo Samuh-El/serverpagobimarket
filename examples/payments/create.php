@@ -8,12 +8,13 @@ require(__DIR__ . "/../../index.php");
 
 
 // RECIBE VALORES DEL CLIENTE
-$subjectC = $subject;
-$emailC = $email;
-$valorC = $valor;
+
 // $subjectC = "Enviado desde el otro formulario";
 // $emailC = "correoXDD@gmail.com";
 // $valorC = 3000;
+$subjectC = $subject;
+$emailC = $email;
+$valorC = $valor;
 
 
 try

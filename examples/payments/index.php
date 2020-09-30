@@ -1,17 +1,13 @@
 <?php
+
 /**
  * Ejemplo de creación de una orden de cobro, iniciando una transacción de pago
  * Utiliza el método payment/create
  */
 require(__DIR__ . "/../../lib/FlowApi.class.php");
-//require(__DIR__ . "/../../index.php");
 
 
 // RECIBE VALORES DEL CLIENTE
-$subject = $_REQUEST['subject'];
-	$email = $_REQUEST['email'];
-	$valor = $_REQUEST['valor'];
-
 
 // $subjectC = "Enviado desde el otro formulario";
 // $emailC = "correoXDD@gmail.com";
