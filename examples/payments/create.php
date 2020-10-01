@@ -6,6 +6,8 @@
 require(__DIR__ . "/../../lib/FlowApi.class.php");
 require(__DIR__ . "/../../index.php");
 
+$subject = $_REQUEST['subject'];
+
 
 // RECIBE VALORES DEL CLIENTE
 
@@ -37,13 +39,13 @@ try
 	*/
 	$params = array(
 		"commerceOrder" => rand(1100,2000),
-		"subject" => $_REQUEST['subject'],
+		"subject" => $subject,
 		"currency" => "CLP",
 		"amount" => $_REQUEST['valor'],
 		"email" => $_REQUEST['email'],
 		"paymentMethod" => 9,
 		"urlConfirmation" => Config::get("BASEURL") . "/examples/payments/confirm.php",
-		"urlReturn" => Config::get("BASEURL") ."/examples/payments/result.php?email=".$_REQUEST['email']."&idPlan=".$_REQUEST['idPlan']."&subject=".$_REQUEST['subject'],
+		"urlReturn" => Config::get("BASEURL") ."/examples/payments/result.php?email=".$_REQUEST['email']."&idPlan=".$_REQUEST['idPlan']."&subject=".$subject,
 		"optional" => $optional
 	);
 
