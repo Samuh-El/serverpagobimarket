@@ -40,7 +40,7 @@ try
 		"email" => $_REQUEST['email'],
 		"paymentMethod" => 9,
 		"urlConfirmation" => Config::get("BASEURL") . "/examples/payments/confirm.php",
-		"urlReturn" => Config::get("BASEURL") ."/examples/payments/result.php?email=".$_REQUEST['email']."&idPlan=".$_REQUEST['idPlan']."&subject=".$_REQUEST['subject'],
+		"urlReturn" => Config::get("BASEURL") ."/examples/payments/result.php?email=".$_REQUEST['email']."&idPlan=".$_REQUEST['idPlan'],
 		"optional" => $optional
 	);
 
