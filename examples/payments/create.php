@@ -6,9 +6,6 @@
 require(__DIR__ . "/../../lib/FlowApi.class.php");
 require(__DIR__ . "/../../index.php");
 
-$subject = $_REQUEST['subject'];
-
-
 // RECIBE VALORES DEL CLIENTE
 
 // $subjectC = "Enviado desde el otro formulario";
@@ -17,8 +14,6 @@ $subject = $_REQUEST['subject'];
 // $subjectC = $_REQUEST['subject'];
 // $emailC = $_REQUEST['email'];
 // $valorC = $_REQUEST['valor'];
-
-
 
 try
 {
