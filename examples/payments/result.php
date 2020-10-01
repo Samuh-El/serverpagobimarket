@@ -11,7 +11,7 @@ try {
 	// Recibe email
 	$email = $_REQUEST['email'];
 	$idPlan = $_REQUEST['idPlan'];
-	//$nombrePlan =$_REQUEST['subject'];
+	$subject =$_REQUEST['subject'];
 
 	//Recibe el token enviado por Flow
 	if(!isset($_POST["token"])) {
@@ -49,7 +49,7 @@ try {
 		// INSERT INTO `Correo` (`id`, `correo`, `idPlan`, `fechaInsertado`, `estado`, `nombrePlan`) 
 		//VALUES (NULL, '', '', CURRENT_TIMESTAMP, '', '');
 		$sql="INSERT INTO `Correo` (`id`, `correo`, `idPlan`, `fechaInsertado`, `estado`, `nombrePlan`)  VALUES
-		(NULL, '".$email."', '".$idPlan."', CURRENT_TIMESTAMP, '0', '".$nombrePlan."');";
+		(NULL, '".$email."', '".$idPlan."', CURRENT_TIMESTAMP, '0', '".$subject."');";
 
 		if ($conn->query($sql) === TRUE) {
 
