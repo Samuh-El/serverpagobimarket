@@ -11,7 +11,7 @@ try {
 	// Recibe email
 	$email = $_REQUEST['email'];
 	$idPlan = $_REQUEST['idPlan'];
-	$nombrePlan =$_REQUEST['subject'];
+	//$nombrePlan =$_REQUEST['subject'];
 
 	//Recibe el token enviado por Flow
 	if(!isset($_POST["token"])) {
