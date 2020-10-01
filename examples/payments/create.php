@@ -39,13 +39,13 @@ try
 	*/
 	$params = array(
 		"commerceOrder" => rand(1100,2000),
-		"subject" => $subject,
+		"subject" => $_REQUEST['subject'],
 		"currency" => "CLP",
 		"amount" => $_REQUEST['valor'],
 		"email" => $_REQUEST['email'],
 		"paymentMethod" => 9,
 		"urlConfirmation" => Config::get("BASEURL") . "/examples/payments/confirm.php",
-		"urlReturn" => Config::get("BASEURL") ."/examples/payments/result.php?email=".$_REQUEST['email']."&idPlan=".$_REQUEST['idPlan']."&subject=".$subject,
+		"urlReturn" => Config::get("BASEURL") ."/examples/payments/result.php?email=".$_REQUEST['email']."&idPlan=".$_REQUEST['idPlan'],
 		"optional" => $optional
 	);
 
