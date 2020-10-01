@@ -46,10 +46,10 @@ try {
 			header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
 		}
 
-		// INSERT INTO `Correo` (`id`, `correo`, 
-		//`idPlan`, `fechaInsertado`, `estado`) VALUES (NULL, '', '', CURRENT_TIMESTAMP, '');
-		$sql="INSERT INTO `Correo` (`id`, `correo`, `idPlan`, `fechaInsertado`, `estado`,`nombrePlan`) VALUES
-		(NULL, '".$email."', '".$idPlan."' , CURRENT_TIMESTAMP, '0','".$nombrePlan."');";
+		// INSERT INTO `Correo` (`id`, `correo`, `idPlan`, `fechaInsertado`, `estado`, `nombrePlan`) 
+		//VALUES (NULL, '', '', CURRENT_TIMESTAMP, '', '');
+		$sql="INSERT INTO `Correo` (`id`, `correo`, `idPlan`, `fechaInsertado`, `estado`, `nombrePlan`)  VALUES
+		(NULL, '".$email."', '".$idPlan."', CURRENT_TIMESTAMP, '0', '".$nombrePlan."');";
 
 		if ($conn->query($sql) === TRUE) {
 
