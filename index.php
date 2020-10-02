@@ -20,7 +20,7 @@ try
     $valorUF = $obj['serie'][0]['valor'];
     
     // Calcular valor según plan seleccionado
-	$valor = intval(round(($valor*12)*$valorUF)); // Valor redondeado
+	$valor = round(($valor*12)*$valorUF); // Valor redondeado
 
 
 	// Enviar a hacer el pago
