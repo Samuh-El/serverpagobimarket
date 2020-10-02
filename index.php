@@ -21,6 +21,7 @@ try
     
     // Calcular valor según plan seleccionado
 	$valor = ($valor*$valorUF)*12; // Valor redondeado
+	$valor = round($valor);
 
 
 	// Enviar a hacer el pago
