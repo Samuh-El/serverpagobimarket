@@ -17,10 +17,12 @@ try {
 	$serviceName = "payment/getStatus";
 	$flowApi = new FlowApi();
 	$response = $flowApi->send($serviceName, $params, "GET");
+
+	echo "<script type="text/javascript">alert(\'Servicename: ".$serviceName."\');</script>"; 
+	echo "<script type="text/javascript">alert(\'Response: ".$response."\');</script>"; 
 	
 	//Actualiza los datos en su sistema
-	
-	print_r($response);
+	//print_r($response);
 	
 	
 } 
