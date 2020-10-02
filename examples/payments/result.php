@@ -11,11 +11,11 @@ try {
 	// Recibe email
 	$email = $_REQUEST['email'];
 	$idPlan = $_REQUEST['idPlan'];
-	//$subject =$_REQUEST['subject'];
 
 	//Recibe el token enviado por Flow
 	if(!isset($_POST["token"])) {
 		throw new Exception("No se recibio el token", 1);
+		header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
 	}
 	$token = filter_input(INPUT_POST, 'token');
 	$params = array(
