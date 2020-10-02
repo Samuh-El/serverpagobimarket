@@ -19,12 +19,6 @@ try {
 		header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
 	}
 
-	// Anulo compra
-	if(!isset($_POST["token"])) 
-	{
-		throw new Exception("No se recibio el token", 0);
-		header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
-	}
 
 	$token = filter_input(INPUT_POST, 'token');
 	$params = array(
