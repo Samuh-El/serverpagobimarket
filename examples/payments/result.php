@@ -13,14 +13,24 @@ try {
 	$idPlan = $_REQUEST['idPlan'];
 
 	//Recibe el token enviado por Flow
-	if(!isset($_POST["token"])) {
+	if(!isset($_POST["token"])) 
+	{
 		throw new Exception("No se recibio el token", 1);
 		header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
 	}
+
+	// Anulo compra
+	if(!isset($_POST["token"])) 
+	{
+		throw new Exception("No se recibio el token", 0);
+		header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
+	}
+
 	$token = filter_input(INPUT_POST, 'token');
 	$params = array(
 		"token" => $token
 	);
+
 	//Indica el servicio a utilizar
 	$serviceName = "payment/getStatus";
 	$flowApi = new FlowApi();
@@ -39,6 +49,7 @@ try {
 
 		// Create connection
 		$conn = new mysqli($servername, $username, $password, $dbname);
+		
 		// Check connection
 		if ($conn->connect_error) 
 		{
@@ -46,8 +57,7 @@ try {
 			header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
 		}
 
-		// INSERT INTO `Correo` (`id`, `correo`, `idPlan`, `fechaInsertado`, `estado`, `nombrePlan`) 
-		//VALUES (NULL, '', '', CURRENT_TIMESTAMP, '', '');
+		// Query
 		$sql="INSERT INTO `Correo` (`id`, `correo`, `idPlan`, `fechaInsertado`, `estado`)  VALUES
 		(NULL, '".$email."', '".$idPlan."', CURRENT_TIMESTAMP, '0');";
 
@@ -57,7 +67,9 @@ try {
 			file_put_contents("php://stderr", "Registro agregado".PHP_EOL);
 			header("Location: http://bimarketchile.cl/#/post-compra");
 		} 
-		else {
+		
+		else 
+		{
 			file_put_contents("php://stderr", "ERROR ENTRO AL ELSE".PHP_EOL);
 			echo "Error: " . $sql . "<br>" . $conn->error;
 			header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
@@ -74,7 +86,10 @@ try {
 	
 
 	
-} catch (Exception $e) {
+} 
+
+catch (Exception $e) 
+{
 	//echo "Error: " . $e->getCode() . " - " . $e->getMessage();
 	header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
 }
