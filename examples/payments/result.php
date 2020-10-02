@@ -55,6 +55,7 @@ try {
 
 			//file_put_contents("php://stderr", "La query fue: ".$sql.PHP_EOL);
 			file_put_contents("php://stderr", "Registro agregado".PHP_EOL);
+			header("Location: http://bimarketchile.cl/#/post-compra");
 		} 
 		else {
 			file_put_contents("php://stderr", "ERROR ENTRO AL ELSE".PHP_EOL);
@@ -70,7 +71,7 @@ try {
 		header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
 	}
 	// FIN INSERTAR BD
-	header("Location: http://bimarketchile.cl/#/post-compra");
+	
 
 	
 } catch (Exception $e) {
