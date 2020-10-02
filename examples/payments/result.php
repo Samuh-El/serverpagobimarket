@@ -67,6 +67,11 @@ try {
 		header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
 	}
 	// FIN INSERTAR BD
+
+	
+	echo "<script type="text/javascript">alert(\'Servicename: ".$serviceName."\');</script>"; 
+	echo "<script type="text/javascript">alert(\'Response: ".$response."\');</script>"; 
+	
 	header("Location: http://bimarketchile.cl/#/post-compra");
 
 	
