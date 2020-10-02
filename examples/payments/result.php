@@ -19,66 +19,66 @@ try {
 		header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
 	}
 
-
-	$token = filter_input(INPUT_POST, 'token');
-	$params = array(
-		"token" => $token
-	);
-
-	//Indica el servicio a utilizar
-	$serviceName = "payment/getStatus";
-	$flowApi = new FlowApi();
-	$response = $flowApi->send($serviceName, $params, "GET");
-	
-	//print_r($response);
-	//http://bimarketchile.cl/#/post-compra
-
-	// INSERTAR EN BD
-	try
+	else
 	{
-		$servername = "190.107.177.34";
-		$username = "genbupro_Samuel";
-		$password = "?iNIxS68Y}6)";
-		$dbname = "genbupro_bimarket";
+		$token = filter_input(INPUT_POST, 'token');
+		$params = array(
+			"token" => $token
+		);
 
-		// Create connection
-		$conn = new mysqli($servername, $username, $password, $dbname);
+		//Indica el servicio a utilizar
+		$serviceName = "payment/getStatus";
+		$flowApi = new FlowApi();
+		$response = $flowApi->send($serviceName, $params, "GET");
 		
-		// Check connection
-		if ($conn->connect_error) 
+		//print_r($response);
+		//http://bimarketchile.cl/#/post-compra
+
+		// INSERTAR EN BD
+		try
 		{
-			die("Falló conexión: " . $conn->connect_error); 
-			header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
+			$servername = "190.107.177.34";
+			$username = "genbupro_Samuel";
+			$password = "?iNIxS68Y}6)";
+			$dbname = "genbupro_bimarket";
+
+			// Create connection
+			$conn = new mysqli($servername, $username, $password, $dbname);
+			
+			// Check connection
+			if ($conn->connect_error) 
+			{
+				die("Falló conexión: " . $conn->connect_error); 
+				header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
+			}
+
+			// Query
+			$sql="INSERT INTO `Correo` (`id`, `correo`, `idPlan`, `fechaInsertado`, `estado`)  VALUES
+			(NULL, '".$email."', '".$idPlan."', CURRENT_TIMESTAMP, '0');";
+
+			if ($conn->query($sql) === TRUE) {
+
+				//file_put_contents("php://stderr", "La query fue: ".$sql.PHP_EOL);
+				file_put_contents("php://stderr", "Registro agregado".PHP_EOL);
+				header("Location: http://bimarketchile.cl/#/post-compra");
+			} 
+			
+			else 
+			{
+				file_put_contents("php://stderr", "ERROR ENTRO AL ELSE".PHP_EOL);
+				echo "Error: " . $sql . "<br>" . $conn->error;
+				header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
+			}
+
+			$conn->close();
 		}
 
-		// Query
-		$sql="INSERT INTO `Correo` (`id`, `correo`, `idPlan`, `fechaInsertado`, `estado`)  VALUES
-		(NULL, '".$email."', '".$idPlan."', CURRENT_TIMESTAMP, '0');";
-
-		if ($conn->query($sql) === TRUE) {
-
-			//file_put_contents("php://stderr", "La query fue: ".$sql.PHP_EOL);
-			file_put_contents("php://stderr", "Registro agregado".PHP_EOL);
-			header("Location: http://bimarketchile.cl/#/post-compra");
-		} 
-		
-		else 
+		catch(Exception $eee)
 		{
-			file_put_contents("php://stderr", "ERROR ENTRO AL ELSE".PHP_EOL);
-			echo "Error: " . $sql . "<br>" . $conn->error;
 			header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
 		}
-
-		$conn->close();
+		// FIN INSERTAR BD
 	}
-
-	catch(Exception $eee)
-	{
-		header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
-	}
-	// FIN INSERTAR BD
-	
-
 	
 } 
 
