@@ -8,6 +8,7 @@ require(__DIR__ . "/../../lib/FlowApi.class.php");
 try {
 	if(!isset($_POST["token"])) {
 		throw new Exception("No se recibio el token", 1);
+		header("Location: http://bimarketchile.cl/#/errorPagoBiMarket");
 	}
 	$token = filter_input(INPUT_POST, 'token');
 	$params = array(
