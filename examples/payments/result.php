@@ -30,9 +30,9 @@ try {
 	try
 	{
 		$servername = "190.107.177.34";
-		$username = "genbupro_Samuel";
-		$password = "?iNIxS68Y}6)";
-		$dbname = "genbupro_bimarket";
+		$username = "bimarket_admin";
+		$password = "J6AjVfQk981S";
+		$dbname = "bimarket_web";
 
 		// Create connection
 		$conn = new mysqli($servername, $username, $password, $dbname);
