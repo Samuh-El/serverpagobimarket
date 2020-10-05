@@ -69,7 +69,7 @@ try {
 	// FIN INSERTAR BD
 
 
-	//header("Location: http://bimarketchile.cl/#/post-compra");
+	header("Location: http://bimarketchile.cl/#/post-compra");
 
 	
 } catch (Exception $e) {
